@@ -11,10 +11,6 @@ const app = express();
 app.use(cors())
 const httpServer = createServer(app);
 
-app.get('/test', (req,res) => [
-  res.send('cool')
-])
-
 //["http://localhost:3000",process.env.PROD_URL]
 
 const io = new Server(httpServer, {
