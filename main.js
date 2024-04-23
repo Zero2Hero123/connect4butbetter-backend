@@ -15,9 +15,11 @@ app.get('/test', (req,res) => [
   res.send('cool')
 ])
 
+//["http://localhost:3000",process.env.PROD_URL]
+
 const io = new Server(httpServer, {
     cors: {
-        origin: ["http://localhost:3000",process.env.PROD_URL],
+        origin: '*',
         methods: ['GET','POST']
     }
 });
