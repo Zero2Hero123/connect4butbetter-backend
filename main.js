@@ -11,6 +11,10 @@ const app = express();
 app.use(cors())
 const httpServer = createServer(app);
 
+app.get('/test', (req,res) => [
+  res.send('cool')
+])
+
 const io = new Server(httpServer, {
     cors: {
         origin: ["http://localhost:3000",process.env.PROD_URL],
@@ -100,6 +104,6 @@ io.on("connection", (socket) => {
     
 //   });
 
-httpServer.listen(3001,'0.0.0.0',() => {
+httpServer.listen(3000,'0.0.0.0',() => {
     console.log("listening!")
 });
