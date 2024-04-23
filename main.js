@@ -8,7 +8,9 @@ require('dotenv').config()
 const checkForWin = require('./checkForWin')
 
 const app = express();
-app.use(cors())
+app.use(cors({
+  origin: '*'
+}))
 const httpServer = createServer(app);
 
 //["http://localhost:3000",process.env.PROD_URL]
